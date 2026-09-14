@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Juego interactivo 100 Mexicanos Dijeron, especial del 16 de septiembre, con cultura e historia de México."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>100 Mexicanos Dijeron · Especial Patrio</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081f4d'/%3E%3Cpath d='M14 45V19h8l10 14 10-14h8v26h-8V31L32 44 22 31v14z' fill='%23f4c44e'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <main class="game-stage" aria-live="polite">
+        <div class="patriotic-ribbon" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="corner-accent corner-accent--left" aria-hidden="true"></div>
+        <div class="corner-accent corner-accent--right" aria-hidden="true"></div>
+
+        <header class="game-header">
+          <img
+            class="mascot-pair"
+            src="assets/personajes-mexicanos.png"
+            alt="Pareja con vestimenta tradicional mexicana en verde, blanco y rojo"
+          />
+          <div class="brand-lockup">
+            <div class="brand-number" aria-hidden="true">100</div>
+            <div class="brand-title">
+              <h1>Mexicanos <span>Dijeron</span></h1>
+              <p class="board-subtitle">EL TABLERO DE JUEGO</p>
+            </div>
+          </div>
+          <div class="flag-and-seal">
+            <img class="mexico-flag" src="assets/bandera-mexico.png" alt="Bandera de México" />
+            <div class="event-seal">
+              <small>VIVA</small>
+              <strong>MÉXICO</strong>
+              <span>16 · SEPTIEMBRE</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="board-layout" aria-label="Tablero y marcador">
+          <article class="team-card team-card--green" id="teamCardA">
+            <span class="team-label">EQUIPO</span>
+            <strong id="teamNameA">Equipo Verde</strong>
+            <output id="scoreA">0</output>
+            <span class="team-errors-label">ERRORES</span>
+            <div class="team-strikes" aria-label="Errores del equipo verde">
+              <span class="strike team-strike" data-team-strike="0" data-strike="1">×</span>
+              <span class="strike team-strike" data-team-strike="0" data-strike="2">×</span>
+              <span class="strike team-strike" data-team-strike="0" data-strike="3">×</span>
+            </div>
+          </article>
+
+          <div class="board-center">
+            <section class="question-card">
+              <span class="category" id="questionCategory">TRADICIONES</span>
+              <h2 id="questionText">Menciona algo que no puede faltar en una Noche Mexicana</h2>
+              <p id="questionType">RESPUESTAS POPULARES · 6 EN EL TABLERO</p>
+            </section>
+
+            <section class="answer-grid" id="answerGrid" aria-label="Respuestas"></section>
+
+            <footer class="board-total">
+              <span id="bankLabel">TOTAL PUNTOS</span>
+              <strong id="pointsBank">0</strong>
+            </footer>
+          </div>
+
+          <article class="team-card team-card--red" id="teamCardB">
+            <span class="team-label">EQUIPO</span>
+            <strong id="teamNameB">Equipo Rojo</strong>
+            <output id="scoreB">0</output>
+            <span class="team-errors-label">ERRORES</span>
+            <div class="team-strikes" aria-label="Errores del equipo rojo">
+              <span class="strike team-strike" data-team-strike="1" data-strike="1">×</span>
+              <span class="strike team-strike" data-team-strike="1" data-strike="2">×</span>
+              <span class="strike team-strike" data-team-strike="1" data-strike="3">×</span>
+            </div>
+          </article>
+        </section>
+
+        <button class="board-fullscreen" id="boardFullscreen" type="button" aria-label="Activar pantalla completa">
+          Pantalla completa
+        </button>
+        <div class="effect-layer" id="effectLayer" aria-hidden="true"></div>
+
+        <section class="winner-overlay" id="winnerOverlay" hidden aria-live="assertive">
+          <div class="winner-rays" aria-hidden="true"></div>
+          <div class="winner-content">
+            <span class="winner-crown" aria-hidden="true">★</span>
+            <p id="winnerLabel">EQUIPO GANADOR</p>
+            <h2 id="winnerName">Equipo Águila</h2>
+            <strong id="winnerScore">0 puntos</strong>
+            <small>¡Gracias por celebrar a México!</small>
+          </div>
+        </section>
+      </main>
+
+      <aside class="control-panel" id="controlPanel">
+        <header class="control-header">
+          <div>
+            <p class="control-kicker">MESA DE PRODUCCIÓN</p>
+            <h2>Control del conductor</h2>
+          </div>
+          <span class="live-badge"><i></i> Solo conductor</span>
+        </header>
+
+        <button class="primary-action" id="openBoard" type="button">
+          <span>Abrir tablero para proyectar</span>
+          <strong>↗</strong>
+        </button>
+
+        <details class="projection-guide" open>
+          <summary>
+            <span>Cómo conectar el proyector</span>
+            <strong>4 pasos</strong>
+          </summary>
+          <ol>
+            <li>Conecta el cable HDMI de la laptop al proyector.</li>
+            <li>Presiona <kbd>Windows</kbd> + <kbd>P</kbd> y elige <strong>Extender</strong> (no “Duplicar”).</li>
+            <li>Pulsa el botón azul de arriba y mueve la nueva ventana al proyector.</li>
+            <li>Presiona <kbd>F</kbd> en el tablero para verlo en pantalla completa.</li>
+          </ol>
+          <p><strong>Privado:</strong> la laptop conserva este control; el público solo verá el tablero.</p>
+        </details>
+
+        <section class="control-section">
+          <div class="section-heading">
+            <h3>Pregunta actual</h3>
+            <span id="controlQuestionCount">1 / 20</span>
+          </div>
+          <p class="current-question" id="controlQuestionText"></p>
+          <div class="button-row">
+            <button class="secondary-button" id="previousQuestion" type="button">← Anterior</button>
+            <button class="secondary-button" id="nextQuestion" type="button">Siguiente →</button>
+          </div>
+          <button class="finish-button" id="finishGame" type="button">★ Mostrar equipo ganador</button>
+        </section>
+
+        <section class="control-section">
+          <div class="section-heading">
+            <h3>Multiplicador</h3>
+            <span>Valor de puntos</span>
+          </div>
+          <div class="segmented" id="multiplierButtons" role="group" aria-label="Multiplicador de puntos">
+            <button type="button" data-multiplier="1" class="active">×1</button>
+            <button type="button" data-multiplier="2">×2</button>
+            <button type="button" data-multiplier="3">×3</button>
+          </div>
+        </section>
+
+        <section class="control-section" id="answerControlSection">
+          <div class="section-heading">
+            <h3 id="answerControlTitle">Revelar respuestas</h3>
+            <span id="revealedCount">0 / 6</span>
+          </div>
+          <div class="answer-controls" id="answerControls"></div>
+          <div class="exact-controls" id="exactControls" hidden>
+            <p class="exact-help">El participante responde en voz alta; tú decides si es correcta.</p>
+            <div class="correct-answer-preview">
+              <span>Respuesta correcta</span>
+              <strong id="correctAnswerPreview"></strong>
+            </div>
+            <button class="reveal-exact-button" id="revealExact" type="button">Mostrar respuesta en el tablero</button>
+            <div class="button-row">
+              <button class="team-action team-action--green" id="correctA" type="button">✓ Correcta · Equipo Verde</button>
+              <button class="team-action team-action--red" id="correctB" type="button">✓ Correcta · Equipo Rojo</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="control-section">
+          <div class="section-heading">
+            <h3>Errores por equipo</h3>
+            <span id="strikeCount">Verde 0/3 · Rojo 0/3</span>
+          </div>
+          <div class="button-row">
+            <button class="team-action team-action--green" id="addStrikeA" type="button">× Error verde</button>
+            <button class="team-action team-action--red" id="addStrikeB" type="button">× Error rojo</button>
+          </div>
+          <div class="button-row strike-remove-row">
+            <button class="secondary-button secondary-button--small" id="removeStrikeA" type="button">Quitar verde</button>
+            <button class="secondary-button secondary-button--small" id="removeStrikeB" type="button">Quitar rojo</button>
+          </div>
+        </section>
+
+        <section class="control-section" id="awardSection">
+          <div class="section-heading">
+            <h3>Entregar puntos</h3>
+            <strong class="bank-mini"><span id="controlBank">0</span> pts</strong>
+          </div>
+          <div class="button-row">
+            <button class="team-action team-action--green" id="awardA" type="button">Equipo Verde</button>
+            <button class="team-action team-action--red" id="awardB" type="button">Equipo Rojo</button>
+          </div>
+        </section>
+
+        <section class="control-section team-editor-section">
+          <div class="section-heading">
+            <h3>Equipos y marcador</h3>
+          </div>
+          <label>
+            <span>Equipo verde</span>
+            <input id="teamNameInputA" type="text" maxlength="24" value="Equipo Verde" />
+          </label>
+          <div class="score-adjust-row">
+            <button type="button" data-score-team="0" data-score-delta="-10">−10</button>
+            <button type="button" data-score-team="0" data-score-delta="10">+10</button>
+          </div>
+          <label>
+            <span>Equipo rojo</span>
+            <input id="teamNameInputB" type="text" maxlength="24" value="Equipo Rojo" />
+          </label>
+          <div class="score-adjust-row">
+            <button type="button" data-score-team="1" data-score-delta="-10">−10</button>
+            <button type="button" data-score-team="1" data-score-delta="10">+10</button>
+          </div>
+        </section>
+
+        <section class="control-section shortcuts-section">
+          <details>
+            <summary>Atajos de teclado</summary>
+            <p><kbd>1–8</kbd> Revelar · <kbd>Z</kbd>/<kbd>X</kbd> Error verde/rojo</p>
+            <p><kbd>A</kbd>/<kbd>B</kbd> Dar puntos al equipo verde/rojo</p>
+            <p><kbd>→</kbd> Siguiente · <kbd>←</kbd> Anterior · <kbd>G</kbd> Ganador · <kbd>U</kbd> Deshacer</p>
+          </details>
+        </section>
+
+        <footer class="control-footer">
+          <button class="text-button" id="undoAction" type="button">↶ Deshacer</button>
+          <label class="sound-toggle">
+            <input id="soundToggle" type="checkbox" checked />
+            <span>Sonidos</span>
+          </label>
+          <button class="text-button text-button--danger" id="resetGame" type="button">Reiniciar juego</button>
+        </footer>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
