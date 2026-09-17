@@ -24,10 +24,30 @@ window.GAME_QUESTIONS = [
   },
   {
     type: "exact",
+    category: "Biblia · Génesis 6:13–14",
+    question: "¿A quién mandó Dios construir un arca?",
+    answer: "Noé",
+    points: 50
+  },
+  {
+    type: "exact",
     category: "Independencia",
     question: "¿En qué año inició la Guerra de Independencia de México?",
     answer: "1810",
     points: 50
+  },
+  {
+    type: "survey",
+    category: "Biblia · Éxodo 7–12",
+    question: "Menciona una de las plagas enviadas sobre Egipto",
+    answers: [
+      { text: "Agua convertida en sangre", points: 24 },
+      { text: "Ranas", points: 20 },
+      { text: "Piojos o mosquitos", points: 17 },
+      { text: "Moscas", points: 15 },
+      { text: "Muerte del ganado", points: 13 },
+      { text: "Granizo", points: 11 }
+    ]
   },
   {
     type: "survey",
@@ -50,6 +70,13 @@ window.GAME_QUESTIONS = [
     points: 50
   },
   {
+    type: "exact",
+    category: "Biblia · Mateo 2:1",
+    question: "¿En qué ciudad nació Jesús?",
+    answer: "Belén",
+    points: 50
+  },
+  {
     type: "survey",
     category: "Personajes históricos",
     question: "Menciona a un personaje de la Independencia de México",
@@ -63,10 +90,30 @@ window.GAME_QUESTIONS = [
     ]
   },
   {
+    type: "survey",
+    category: "Biblia · Mateo 10:2–4",
+    question: "Menciona a uno de los doce apóstoles que aparecen en Mateo 10",
+    answers: [
+      { text: "Pedro", points: 26 },
+      { text: "Juan", points: 20 },
+      { text: "Santiago", points: 18 },
+      { text: "Andrés", points: 15 },
+      { text: "Felipe", points: 12 },
+      { text: "Tomás", points: 9 }
+    ]
+  },
+  {
     type: "exact",
     category: "Independencia",
     question: "¿En qué año se consumó la Independencia de México?",
     answer: "1821",
+    points: 50
+  },
+  {
+    type: "exact",
+    category: "Biblia · 1 Samuel 17:49–50",
+    question: "¿Quién venció a Goliat?",
+    answer: "David",
     points: 50
   },
   {
@@ -91,6 +138,19 @@ window.GAME_QUESTIONS = [
   },
   {
     type: "survey",
+    category: "Biblia · Gálatas 5:22–23",
+    question: "Menciona un fruto del Espíritu señalado en Gálatas 5",
+    answers: [
+      { text: "Amor", points: 24 },
+      { text: "Gozo", points: 20 },
+      { text: "Paz", points: 18 },
+      { text: "Paciencia", points: 15 },
+      { text: "Benignidad", points: 13 },
+      { text: "Bondad", points: 10 }
+    ]
+  },
+  {
+    type: "survey",
     category: "Independencia",
     question: "Menciona un símbolo relacionado con la Independencia de México",
     answers: [
@@ -104,10 +164,30 @@ window.GAME_QUESTIONS = [
   },
   {
     type: "exact",
+    category: "Biblia · Génesis 7:12",
+    question: "¿Cuántos días y cuántas noches llovió durante el diluvio?",
+    answer: "40 días y 40 noches",
+    points: 50
+  },
+  {
+    type: "exact",
     category: "Documentos históricos",
     question: "¿Qué documento presentó José María Morelos en 1813?",
     answer: "Sentimientos de la Nación",
     points: 60
+  },
+  {
+    type: "survey",
+    category: "Biblia · Evangelios",
+    question: "Menciona un milagro de Jesús narrado en los Evangelios",
+    answers: [
+      { text: "Convertir el agua en vino", points: 22 },
+      { text: "Alimentar a cinco mil", points: 20 },
+      { text: "Caminar sobre el agua", points: 18 },
+      { text: "Calmar la tempestad", points: 16 },
+      { text: "Sanar a un ciego", points: 14 },
+      { text: "Resucitar a Lázaro", points: 10 }
+    ]
   },
   {
     type: "survey",
@@ -130,6 +210,13 @@ window.GAME_QUESTIONS = [
     points: 60
   },
   {
+    type: "exact",
+    category: "Biblia · Éxodo 31:18",
+    question: "¿A quién entregó Dios las dos tablas del testimonio?",
+    answer: "Moisés",
+    points: 50
+  },
+  {
     type: "survey",
     category: "Septiembre mexicano",
     question: "Menciona algo que ves en las calles durante el mes patrio",
@@ -143,11 +230,31 @@ window.GAME_QUESTIONS = [
     ]
   },
   {
+    type: "survey",
+    category: "Biblia · Efesios 6:14–17",
+    question: "Menciona una pieza de la armadura de Dios",
+    answers: [
+      { text: "Cinturón de la verdad", points: 20 },
+      { text: "Coraza de justicia", points: 19 },
+      { text: "Calzado del evangelio de la paz", points: 17 },
+      { text: "Escudo de la fe", points: 17 },
+      { text: "Yelmo de la salvación", points: 15 },
+      { text: "Espada del Espíritu", points: 12 }
+    ]
+  },
+  {
     type: "exact",
     category: "Símbolos nacionales",
     question: "¿En qué fecha se celebra el Día de la Bandera en México?",
     answer: "24 de febrero",
     points: 70
+  },
+  {
+    type: "exact",
+    category: "Biblia · Génesis 41:15–16, 25",
+    question: "¿Quién interpretó los sueños del faraón en Egipto?",
+    answer: "José",
+    points: 60
   },
   {
     type: "survey",
@@ -176,11 +283,31 @@ window.GAME_QUESTIONS = [
     ]
   },
   {
+    type: "survey",
+    category: "Biblia · Génesis 35:23–26",
+    question: "Menciona a uno de los hijos de Jacob",
+    answers: [
+      { text: "Rubén", points: 22 },
+      { text: "José", points: 20 },
+      { text: "Judá", points: 18 },
+      { text: "Benjamín", points: 16 },
+      { text: "Leví", points: 14 },
+      { text: "Simeón", points: 10 }
+    ]
+  },
+  {
     type: "exact",
     category: "Símbolos nacionales",
     question: "¿Cuáles son los tres colores de la bandera de México?",
     answer: "Verde, blanco y rojo",
     points: 40
+  },
+  {
+    type: "exact",
+    category: "Biblia · Jonás 1:17",
+    question: "¿Qué profeta fue tragado por un gran pez?",
+    answer: "Jonás",
+    points: 50
   },
   {
     type: "survey",
@@ -193,6 +320,19 @@ window.GAME_QUESTIONS = [
       { text: "Música ranchera", points: 12 },
       { text: "Son jarocho", points: 9 },
       { text: "Marimba", points: 7 }
+    ]
+  },
+  {
+    type: "survey",
+    category: "Biblia · Génesis 1",
+    question: "Menciona algo creado por Dios en el relato de Génesis 1",
+    answers: [
+      { text: "La luz", points: 22 },
+      { text: "El firmamento o cielo", points: 18 },
+      { text: "La tierra seca", points: 17 },
+      { text: "La vegetación", points: 16 },
+      { text: "El sol, la luna y las estrellas", points: 15 },
+      { text: "Los animales", points: 12 }
     ]
   },
   {
@@ -214,5 +354,12 @@ window.GAME_QUESTIONS = [
       { text: "Rebozos", points: 11 },
       { text: "Arte wixárika", points: 9 }
     ]
+  },
+  {
+    type: "exact",
+    category: "Biblia · Lucas 1:27, 31",
+    question: "¿Cómo se llamaba la madre de Jesús?",
+    answer: "María",
+    points: 50
   }
 ];
